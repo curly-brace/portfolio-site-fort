@@ -1,0 +1,133 @@
+// main: style.less
+
+.page-hero {
+    height: 100vmin;
+    background: @main-light-bg;
+
+    .hero-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        &-map {
+            width: 60%;
+            position: relative;
+            left: -10%;
+
+            .map-marker {
+                background: url('../images/main-map-marker.png') no-repeat;
+                background-position-y: center;
+                background-position-x: center;
+                background-size: contain;
+                position: absolute;
+                bottom: 45%;
+                right: 20%;
+                height: 25%;
+                width: 10%;
+
+                .marker-heading {
+                    padding-top: 0.4vw;
+                    span {
+                        text-align: center;
+                        display: block;
+                        font-size: 1.5vw;
+                        line-height: 2vw;
+                        color: #DC4B1D;
+                    }
+                }
+
+                img {
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    min-width: 450%;
+                    max-width: 450%;
+                }
+
+                &.shatura {
+                    bottom: 60%;
+                    right: 8%;
+                    img {
+                        top: -50%;
+                        min-width: 300%;
+                        max-width: 300%;
+                    }
+                }
+
+                &.kolomna {
+                    bottom: 32%;
+                    right: 32%;
+                    img { top: 70% }
+                }
+
+                &.voskresensk {
+                    bottom: 50%;
+                    right: 39%;
+                    img {
+                        top: 75%;
+                        min-width: 600%;
+                        max-width: 600%;
+                    }
+                }
+            }
+        }
+
+        &-heading {
+            width: 40%;
+            color: @dark-text;
+            text-align: center;
+            h2, h3 {
+                font-size: 4vw;
+            }
+            .hr {
+                border-bottom: 2px solid @light-text;
+                margin: 5px 50px;
+            }
+        }
+
+        span.icon-scroll-down {
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+            font-size: 5vw;
+            line-height: 8vw;
+            color: @main-highlight;
+            animation: bounce 1s ease-in-out alternate infinite;
+        }
+
+        @media only screen and (max-width: 700px) {
+            flex-flow: column;
+            * { width: 100% }
+
+            &-map {
+                width: 70%;
+                margin-bottom: 20px;
+                .map-marker .marker-heading span {
+                    font-size: 1.8vw;
+                    line-height: 2.5vw;
+                }
+            }
+
+            &-heading .hr {
+                width: 80%;
+                margin: 5px auto;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        height: 100%;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(4px);
+    }
+}
